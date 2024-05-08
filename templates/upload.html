@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Vanguard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            -background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your actual image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #000000;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #fakeNewsForm {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Virtual Vanguard</h1>
+        <p>Your Trusted Source for News Verification</p>
+    </header>
+
+    <nav>
+
+        <nav>
+        <a href="homepage">Home</a>
+        <a href="upload">Upload</a>
+        <a href="about">About</a>
+        <a href="save">Contact</a>
+    </nav>
+
+    </nav>
+
+    <main>
+        <div class="login">
+	<h1>Fake News📰  Detector</h1>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+    	<textarea  name="message" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea>
+		<br> </br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+        	<div class="results">
+
+	{% if prediction == ['FAKE']%}
+	<h2 style="color:red;">Spam⚠️News📰 </h2>
+	{% elif prediction == ['REAL']%}
+				<h2 style="color:green;"><b>Real News📰</b></h2>
+	{% endif %}
+
+	</div>
+
+    </form>
+
+</div>
+
+
+
+
+
+    </main>
+	<body>
+<!--    <table>-->
+<!--    <tr>-->
+<!--        <td>id</td>-->
+<!--        <td>title</td>-->
+<!--        <td>author</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20800</td>-->
+<!--        <td>Specter of Trump Loosens Tongues, if Not Purse Strings, in Silicon Valley - The New York Times</td>-->
+<!--        <td>David Streitfeld</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20801  </td>-->
+<!--        <td>Russian warships ready to strike terrorists near Aleppo</td>-->
+<!--        <td>nan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20802  </td>-->
+<!--        <td>#NoDAPL: Native American Leaders Vow to Stay All Winter, File Lawsuit Against Police</td>-->
+<!--        <td>Common Dreams</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20803  </td>-->
+<!--        <td>Tim Tebow Will Attempt Another Comeback, This Time in Baseball - The New York Times</td>-->
+<!--        <td>Daniel Victor</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20804  </td>-->
+<!--        <td>Keiser Report: Meme Wars (E995)</td>-->
+<!--        <td>Truth Broadcast Network</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20805  </td>-->
+<!--        <td>Trump is USA&#39;s antique hero. Clinton will be next president</td>-->
+<!--        <td>nan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20806  </td>-->
+<!--        <td>Pelosi Calls for FBI Investigation to Find Out ’What the Russians Have on Donald Trump’ - Breitbart</td>-->
+<!--        <td>Pam Key</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20807  </td>-->
+<!--        <td>Weekly Featured Profile – Randy Shannon</td>-->
+<!--        <td>Trevor Loudon</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20808  </td>-->
+<!--        <td>Urban Population Booms Will Make Climate Change Worse</td>-->
+<!--        <td>nan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20809  </td>-->
+<!--        <td></td>-->
+<!--        <td>cognitive dissident</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20810  </td>-->
+<!--        <td>184 U.S. generals and admirals endorse Trump for Commander-In-Chief</td>-->
+<!--        <td>Dr. Eowyn</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20811  </td>-->
+<!--        <td>“Working Class Hero” by John Brennon</td>-->
+<!--        <td>Doug Diamond</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20812  </td>-->
+<!--        <td>The Rise of Mandatory Vaccinations Means the End of Medical Freedom</td>-->
+<!--        <td>Shaun Bradley</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20813  </td>-->
+<!--        <td>Communists Terrorize Small Business</td>-->
+<!--        <td>Steve Watson</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20814  </td>-->
+<!--        <td>Computer Programmer Comes Forward, Admits To Being Paid To Rig Voting Booths! TRUMP WAS RIGHT! • USA Newsflash</td>-->
+<!--        <td>Usa News Flash</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20815  </td>-->
+<!--        <td>Thieves Take a Chunk of Change, All 221 Pounds of It, From a Berlin Museum - The New York Times</td>-->
+<!--        <td>Melissa Eddy</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20816  </td>-->
+<!--        <td>New England Patriots’ Owner, Still Sore at N.F.L., Has Payback in Sight - The New York Times</td>-->
+<!--        <td>Ken Belson and Ben Shpigel</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20817  </td>-->
+<!--        <td>College Republicans, YAF Sue Berkeley over Ann Coulter Event - Breitbart</td>-->
+<!--        <td>Tom Ciccotta</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20818  </td>-->
+<!--        <td>Trump Melts Down And Accuses The US Postal Service Of Stealing The Election For Clinton</td>-->
+<!--        <td>Jason Easley</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20819  </td>-->
+<!--        <td>Visiting Madagascar? Leave Red Swimsuits (and Lemur Recipes) at Home - The New York Times</td>-->
+<!--        <td>Bryant Rousseau</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20820  </td>-->
+<!--        <td>Reese’s Peanut Butter Cups – Cheap and Full of Toxic Chemicals</td>-->
+<!--        <td>REALdeal</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20821  </td>-->
+<!--        <td>President Obama and President-Elect Donald Trump Meet at White House</td>-->
+<!--        <td>REALdeal</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20822  </td>-->
+<!--        <td></td>-->
+<!--        <td>Dale Johnson</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20823</td>-->
+<!--        <td>The Real Numbers in Florida: Trump Winning by 14 Points</td>-->
+<!--        <td>Andrew Anglin</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20824</td>-->
+<!--        <td>Ann Coulter On C-Span Quotes VDARE.com’s Brimelow–A Racist Is Someone Winning An Argument With A Liberal.</td>-->
+<!--        <td>James Fulford</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20825</td>-->
+<!--        <td>‘Age of Empires’: How 2 Dynasties of Art Forged China’s Identity - The New York Times</td>-->
+<!--        <td>Holland Cotter</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20826</td>-->
+<!--        <td>Because STUPID! NARAL created deck of ‘Gender Cards’ for Hillary; guess which card she is</td>-->
+<!--        <td>Sam J.</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20827</td>-->
+<!--        <td>Bill Weld, Running as a Libertarian, Likens Donald Trump’s Immigration Plan to Kristallnacht - The New York Times</td>-->
+<!--        <td>Maggie Haberman and Thomas Kaplan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20828</td>-->
+<!--        <td>How Housing’s New Players Spiraled Into Banks’ Old Mistakes - The New York Times</td>-->
+<!--        <td>Matthew Goldstein, Rachel Abrams and Ben Protess</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20829</td>-->
+<!--        <td>Переплюнуть Калигулу…</td>-->
+<!--        <td>Жанна Ивченко</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20830</td>-->
+<!--        <td>Sen Booker: Trump Is Creating ’Toxic’ Environment of ’Fear’ - Breitbart</td>-->
+<!--        <td>Pam Key</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20831</td>-->
+<!--        <td>Facebook Wall: Reactions to Donald Trump’s victory in US Presidential elections</td>-->
+<!--        <td>UnReal Mama</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20832</td>-->
+<!--        <td>In ‘Divorce,’ Sarah Jessica Parker Wants to Ditch Mr. Medium - The New York Times</td>-->
+<!--        <td>James Poniewozik</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20833</td>-->
+<!--        <td>Senate Passes Bill Exposing Saudi Arabia to 9/11 Legal Claims - The New York Times</td>-->
+<!--        <td>Mark Mazzetti</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20834</td>-->
+<!--        <td>DAPL Protesters Proven Right as Largest Gas Pipeline in U.S. Experiences Massive and Deadly Explosion – Anonymous</td>-->
+<!--        <td>nan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20835</td>-->
+<!--        <td>Bhumibol Adulyadej, 88, People’s King of Thailand, Dies After 7-Decade Reign - The New York Times</td>-->
+<!--        <td>Barbara Crossette</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20836</td>-->
+<!--        <td>Krauthammer: Gorsuch Filibuster a ’Totally Illogical’ Move Fueled by ’Trump Derangement Syndrome’ - Breitbart</td>-->
+<!--        <td>Ian Hanchett</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20837</td>-->
+<!--        <td>Stop Trump Mixtape: A Protest Song Collection</td>-->
+<!--        <td>Kevin Gosztola</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20838</td>-->
+<!--        <td>What Happened to the FBI?</td>-->
+<!--        <td>Andrew Napolitano</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20839</td>-->
+<!--        <td>Clubbers Lament Demise of Fabric, a ‘Totem’ of London’s Dance Scene - The New York Times</td>-->
+<!--        <td>Dan Bilefsky</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20840</td>-->
+<!--        <td>A Hushed Departure at the Met Museum Reveals Entrenched Management Culture - The New York Times</td>-->
+<!--        <td>Robin Pogrebin</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20841</td>-->
+<!--        <td>Trump: Confidence In Economy ’Has Reached Levels Not Seen In Many, Many Years’ - Breitbart</td>-->
+<!--        <td>Ian Hanchett</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20842</td>-->
+<!--        <td></td>-->
+<!--        <td>Doctor Who?</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20843</td>-->
+<!--        <td>Jason Miller Backs Out of White House Communications Job Under Trump - The New York Times</td>-->
+<!--        <td>Michael D. Shear</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20844</td>-->
+<!--        <td>Turkish Leader Erdogan Making New Enemies and Frustrating Old Friends - The New York Times</td>-->
+<!--        <td>Sabrina Tavernise</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20845</td>-->
+<!--        <td></td>-->
+<!--        <td>Rakiha geevinda</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20846</td>-->
+<!--        <td>Exclusive-Rep. Dave Brat: RyanCare a Perverse Economic System - Breitbart</td>-->
+<!--        <td>Neil W. McCabe</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20847</td>-->
+<!--        <td>U.N. Chief Condemns Airstrike on Yemeni Funeral and Dismisses Saudi Denials - The New York Times</td>-->
+<!--        <td>Nick Cumming-Bruce and Eric Schmitt</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20848</td>-->
+<!--        <td></td>-->
+<!--        <td>Marietta Peverelli</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20849</td>-->
+<!--        <td>Paul Craig Roberts: Trump faces assasination</td>-->
+<!--        <td>nan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20850</td>-->
+<!--        <td>‘The Walking Dead’ Is Back: 7 Questions for the Second Half Premiere - The New York Times</td>-->
+<!--        <td>Jeremy Egner</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>20851</td>-->
+<!--        <td>The African voters in the US who want Donald Trump as their president</td>-->
+<!--        <td>nan</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--</table>-->
+</body>
+</body>
+</html>
